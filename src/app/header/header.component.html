@@ -1,1 +1,21 @@
-<p>header works!</p>
+<header class="header-container">
+  <div class="header-inner">
+    <!-- Logo (ensure the path matches your assets setup) -->
+    <img src="assets/images/logo_white.svg" alt="Logo" class="logo" />
+
+    <!-- Navigation -->
+    <nav class="nav-tabs">
+      <a routerLink="/apps" routerLinkActive="active" [ngClass]="{ 'root-active': isRoot() }">
+        Apps
+      </a>
+      <a routerLink="/about-us" routerLinkActive="active" [ngClass]="{ 'root-active': isRoot() }">
+        About Us
+      </a>
+      <a routerLink="/support" routerLinkActive="active" [ngClass]="{ 'root-active': isRoot() }">
+        Support
+      </a>
+    </nav>
+  </div>
+</header>
+
+

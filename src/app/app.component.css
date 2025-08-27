@@ -1,0 +1,5 @@
+/* Keep content safely below the floating header */
+.app-main {
+  margin-top: 100px;
+  padding: 2rem;
+}

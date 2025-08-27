@@ -1,0 +1,48 @@
+.header-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  background-color: #000;        /* black */
+  border: 1px solid #fff;        /* white stroke */
+  border-radius: 9999px;         /* capsule */
+  padding: 0.75rem 2rem;
+
+  /* Floating/separated look */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  height: 32px;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-tabs a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #a4a3a3; /* inactive */
+  transition: color 0.25s ease;
+}
+
+/* Active link (URL matches) */
+.nav-tabs a.active {
+  color: #fff;
+}
+
+/* Root path: force all links white */
+.nav-tabs a.root-active {
+  color: #fff;
+}
+
