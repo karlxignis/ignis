@@ -1,1 +1,147 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* =========================
+   O U T F I T   F A M I L Y
+   ========================= */
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit-Thin.ttf') format('truetype');
+  font-weight: 100; /* Thin */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit-ExtraLight.ttf') format('truetype');
+  font-weight: 200; /* ExtraLight */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit-Light.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit-SemiBold.ttf') format('truetype');
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit-ExtraBold.ttf') format('truetype');
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('assets/fonts/Outfit-Black.ttf') format('truetype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   F U T U R A   F A M I L Y
+   (weight mapping is conventional)
+   ========================= */
+@font-face {
+  font-family: 'Futura';
+  src: url('assets/fonts/futura-light.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Futura';
+  src: url('assets/fonts/futura-book.ttf') format('truetype');
+  font-weight: 400; /* Book as Regular */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Futura';
+  src: url('assets/fonts/futura-medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Futura';
+  src: url('assets/fonts/futura-demi.ttf') format('truetype');
+  font-weight: 600; /* Demi as SemiBold */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Futura';
+  src: url('assets/fonts/futura-bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   S W I L E   N O V A
+   ========================= */
+/* Note: You listed "SwileNove-Bold.ttf" (likely a typo). 
+   The @font-face below targets that exact filename. 
+   If you rename the file to "SwileNova-Bold.ttf", update the URL. */
+@font-face {
+  font-family: 'SwileNova';
+  src: url('assets/fonts/SwileNova-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SwileNova';
+  src: url('assets/fonts/SwileNova-Black.ttf') format('truetype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+  font-display: swap;
+}
+
+

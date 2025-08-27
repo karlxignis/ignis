@@ -1,0 +1,75 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Section ≈ 35% of viewport height */
+.hero {
+  height: 50vh;
+  min-height: 280px;
+  width: 100vw;          /* force full viewport width */
+  margin: 0;             /* kill default spacing */
+  background: #000;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  
+}
+
+/* Vertical stack, centered */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center the vertical stack */
+  text-align: center;    /* nice for a hero */
+  gap: 0.1rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Bold Outfit for the title */
+.brand-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500; /* Bold */
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 0;
+}
+
+/* Light Outfit for the paragraph */
+.lead {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 100; /* Light */
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: #e8e8e8;
+}
+
+/* Capsule button with white stroke, light text */
+.cta-btn {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; /* Light */
+  text-decoration: none;
+
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 9999px;
+
+  padding: 0.9rem 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.08);
+}
+
+.cta-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+  border-radius: 9999px;
+}
