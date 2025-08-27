@@ -5,44 +5,54 @@
   transform: translateX(-50%);
   z-index: 1000;
 
-  background-color: #000;        /* black */
-  border: 1px solid #fff;        /* white stroke */
-  border-radius: 9999px;         /* capsule */
-  padding: 0.75rem 2rem;
+  width: 70%; /* wider capsule */
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 9999px; /* capsule */
+  padding: 2.3rem 3.9rem; /* more vertical padding */
 
-  /* Floating/separated look */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-  height: 32px;
+  height: 22px;
+  cursor: pointer;
 }
 
 .nav-tabs {
   display: flex;
-  gap: 1.5rem;
+  gap: 4rem;
 }
 
 .nav-tabs a {
   text-decoration: none;
-  font-weight: 500;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
+  font-size: 1.25rem; /* bigger text */
   color: #a4a3a3; /* inactive */
   transition: color 0.25s ease;
 }
 
-/* Active link (URL matches) */
+/* Active link */
 .nav-tabs a.active {
   color: #fff;
 }
 
-/* Root path: force all links white */
+/* Root case: force all links white */
 .nav-tabs a.root-active {
   color: #fff;
 }
+
 
