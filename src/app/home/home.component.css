@@ -16,8 +16,6 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-
-  
 }
 
 /* Vertical stack, centered */
@@ -29,13 +27,14 @@
   gap: 0.1rem;
   max-width: 900px;
   width: 100%;
+  margin-top: 8rem;
 }
 
 /* Bold Outfit for the title */
 .brand-title {
   font-family: 'Outfit', sans-serif;
-  font-weight: 500; /* Bold */
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700; /* Bold */
+  font-size: clamp(1.75rem, 4.5vw, 3rem);
   line-height: 0;
 }
 
@@ -43,6 +42,7 @@
 .lead {
   font-family: 'Outfit', sans-serif;
   font-weight: 100; /* Light */
+  max-width: 40vh;
   font-size: clamp(1rem, 1.6vw, 1.25rem);
   color: #e8e8e8;
 }
@@ -52,6 +52,7 @@
   display: inline-block;
   font-family: 'Outfit', sans-serif;
   font-weight: 300; /* Light */
+  font-size: 1.125rem;
   text-decoration: none;
 
   background: #000;
@@ -59,7 +60,7 @@
   border: 1px solid #fff;
   border-radius: 9999px;
 
-  padding: 0.9rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
