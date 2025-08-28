@@ -54,6 +54,7 @@
   align-items: flex-start;            /* top-aligned */
   justify-content: center;
   gap: clamp(1.25rem, 3vw, 3rem);
+  transform: translateY(-2rem);
 }
 
 /* Left visual */
@@ -129,19 +130,49 @@
 @media (max-width: 900px) {
   .apps-inner {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    gap: 1.5rem; 
+    text-align: center;
   }
-  .apps-right { order: 1; }
-  .apps-left { order: 2; }
 
-  .apps-right {
-    align-items: flex-start;
-    text-align: left;
+  .apps-right { 
+    order: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 👈 center children */
+    text-align: center;    /* 👈 center text */
+    width: 100%;
   }
+
+  .apps-left { 
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Center the image container */
+  .apps-left {
+    display: flex;
+    justify-content: center;  /* horizontally center child */
+    align-items: center;       /* vertically center if it grows */
+  }
+
+
+  /* Make the image smaller but centered */
   .apps-visual {
     max-height: none;
+    width: 50%;
+    max-width: min(480px, 85vw); /* cap size on mobile */
+    margin: 0 auto;             /* ensure centering as a fallback */
+  }
+
+  .store-link {
+    align-self: center; /* centers inside flex column */
   }
 }
+
 
 /* Phones */
 @media (max-width: 768px) {
