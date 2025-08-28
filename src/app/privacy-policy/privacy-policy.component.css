@@ -1,3 +1,51 @@
+/* Hero (black background, like other pages) */
+.hero {
+  position: relative;
+  padding-top: 120px;        /* clear fixed header */
+  box-sizing: border-box;
+
+  height: 35vh;
+  min-height: 260px;
+  width: 100vw;
+  margin: 0;
+
+  background: #000;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0;
+}
+
+.last-updated {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #e8e8e8;
+  margin: 0;
+}
+
+/* Spacer below hero */
+.hero-bottom-spacer {
+  height: 6vh;
+}
+
+/* Legal content */
 .legal-page {
   background: #fff;
   padding: clamp(2rem, 5vw, 4rem) 1rem;
@@ -30,6 +78,5 @@
   margin-bottom: 1rem;
 }
 
-.legal-container li {
-  margin-bottom: 0.5rem;
-}
+.legal-contain
+
