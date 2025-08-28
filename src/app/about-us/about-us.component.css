@@ -1,0 +1,155 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Hero with background image */
+.hero {
+  position: relative;               /* so overlay is positioned inside */
+  padding-top: 120px;               /* prevent fixed header overlap */
+  box-sizing: border-box;
+
+  height: 50vh;
+  min-height: 320px;
+  width: 100vw;
+  margin: 0;
+
+  background: url('/assets/images/all.jpg') center center / cover no-repeat;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;                         /* full cover */
+  background: rgba(0, 0, 0, 0.3);   /* black with 30% opacity */
+  z-index: 1;                       /* sits between background and content */
+}
+
+/* Content above overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;                       /* ensure above overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  gap: 0.75rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Headline */
+.brand-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  font-size: clamp(1.5rem, 5vw, 2.75rem);
+}
+
+/* Spacer */
+.hero-bottom-spacer {
+  height: 8vh;
+}
+
+/* Tablet tweaks */
+@media (max-width: 1024px) {
+  .hero {
+    padding-top: 110px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 96px;
+    min-height: 280px;
+  }
+  .brand-title {
+    letter-spacing: 0.05em;
+    font-size: clamp(1.4rem, 7vw, 2.2rem);
+  }
+  .hero-bottom-spacer {
+    height: 6vh;
+  }
+}
+
+/* ===== About content ===== */
+.about-content {
+  background: #fff;
+  padding: clamp(2rem, 6vw, 4rem) 0;
+}
+
+.content-container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+/* Horizontal rows on desktop */
+.content-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;  /* title : body */
+  align-items: start;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* Title (left) */
+.content-title {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;                      /* Bold */
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  line-height: 1.2;
+  color: #000;
+  letter-spacing: 0.01em;
+}
+
+/* Body (right) */
+.content-body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 100;                      /* Thin (ensure Outfit-Thin is registered) */
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.7;
+  color: #222;
+  max-width: 70ch;                       /* readable line length */
+}
+
+/* ===== Responsiveness ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .content-row {
+    grid-template-columns: 1fr 1.8fr;
+  }
+}
+
+/* Phones / narrow tablets */
+@media (max-width: 768px) {
+  .content-row {
+    grid-template-columns: 1fr;          /* stack title above body */
+    gap: 0.75rem;
+  }
+  .content-title {
+    font-size: clamp(1.15rem, 5vw, 1.4rem);
+  }
+  .content-body {
+    font-size: clamp(0.95rem, 4vw, 1.05rem);
+    line-height: 1.65;
+    max-width: none;                      /* allow full width on mobile */
+  }
+}
+
