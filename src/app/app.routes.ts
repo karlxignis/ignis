@@ -8,9 +8,9 @@ import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.com
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'apps', component: AppsComponent },
-  { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: 'terms-of-service', component: TermsOfServiceComponent },
+  { path: 'ask', component: AppsComponent },
+  { path: 'ask/privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'ask/terms-of-service', component: TermsOfServiceComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'support', component: SupportComponent },
 ];
