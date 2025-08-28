@@ -1,0 +1,33 @@
+.legal-footer {
+  border-top: 1px solid #000;
+  background: #fff;
+  padding: 1rem;
+}
+
+.legal-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.legal-link {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.legal-link:hover {
+  color: #2862F5; /* accent color on hover */
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 480px) {
+  .legal-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+}

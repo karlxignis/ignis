@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { LegalFooterComponent } from '../legal-footer/legal-footer.component';
 
 @Component({
   selector: 'app-apps',
   standalone: true,
-  imports: [],
+  imports: [LegalFooterComponent],
   templateUrl: './apps.component.html',
   styleUrl: './apps.component.css'
 })
