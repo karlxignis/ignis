@@ -1,30 +1,38 @@
-<header class="header-container">
+<header class="header-container" [class.menu-open]="isMenuOpen">
   <div class="header-inner">
-    <!-- Logo -->
-    <a routerLink="/" class="logo-link">
-      <img src="assets/images/logo_white.svg" alt="Logo" class="logo" />
+    <!-- Logo (click -> root) -->
+    <a routerLink="/" class="logo-link" aria-label="Go to home">
+      <img src="assets/images/logo_white.svg" alt="Ignis logo" class="logo" />
     </a>
 
-    <!-- Navigation -->
-    <nav class="nav-tabs">
-      <a
-        routerLink="/apps"
-        routerLinkActive="active"
-        [ngClass]="{ 'root-active': isRoot() }"
-        >Apps</a
-      >
-      <a
-        routerLink="/about-us"
-        routerLinkActive="active"
-        [ngClass]="{ 'root-active': isRoot() }"
-        >About Us</a
-      >
-      <a
-        routerLink="/support"
-        routerLinkActive="active"
-        [ngClass]="{ 'root-active': isRoot() }"
-        >Support</a
-      >
+    <!-- Desktop navigation -->
+    <nav class="nav-tabs desktop-nav">
+      <a routerLink="/apps" routerLinkActive="active" [ngClass]="{ 'root-active': isRoot() }">Apps</a>
+      <a routerLink="/about-us" routerLinkActive="active" [ngClass]="{ 'root-active': isRoot() }">About Us</a>
+      <a routerLink="/support" routerLinkActive="active" [ngClass]="{ 'root-active': isRoot() }">Support</a>
     </nav>
+
+    <!-- Mobile hamburger button -->
+    <button
+      class="menu-btn"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="mobileMenu"
+      aria-label="Toggle navigation"
+    >
+      <img
+        [src]="isMenuOpen ? 'assets/images/close.svg' : 'assets/images/menu.svg'"
+        alt=""
+        class="menu-icon"
+      />
+    </button>
   </div>
+
+  <!-- Mobile navigation (dropdown) -->
+  <nav class="mobile-nav" *ngIf="isMenuOpen" id="mobileMenu">
+    <a routerLink="/apps" routerLinkActive="active" [ngClass]="{ 'root-active': isRoot() }">Apps</a>
+    <a routerLink="/about-us" routerLinkActive="active" [ngClass]="{ 'root-active': isRoot() }">About Us</a>
+    <a routerLink="/support" routerLinkActive="active" [ngClass]="{ 'root-active': isRoot() }">Support</a>
+  </nav>
 </header>
