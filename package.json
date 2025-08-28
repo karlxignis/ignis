@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:pages": "ng build --configuration production --output-path docs && cp docs/browser/index.html docs/browser/404.html && echo karlxignis.com > docs/browser/CNAME"
+    "build:pages": "ng build --configuration production --output-path docs --base-href \"/\" --deploy-url \"/\" && cp -r docs/browser/* docs/ && rm -rf docs/browser && cp docs/index.html docs/404.html && printf karlxignis.com > docs/CNAME && : > docs/.nojekyll"
   },
   "private": true,
   "dependencies": {
