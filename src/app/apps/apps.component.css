@@ -1,0 +1,171 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* ===== Hero (blue) ===== */
+.hero {
+  position: relative;
+  padding-top: 120px;                 /* keep clear of fixed header */
+  box-sizing: border-box;
+
+  height: 35vh;
+  min-height: 280px;
+  width: 100vw;
+  margin: 0;
+
+  background: #2862F5;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo {
+  height: clamp(40px, 10vw, 84px);
+  width: auto;
+}
+
+/* Spacing after hero */
+.hero-bottom-spacer {
+  height: 8vh;
+}
+
+/* ===== Apps content ===== */
+.apps-area {
+  background: #fff;
+  padding: clamp(2rem, 6vw, 4rem) 0;
+}
+
+.apps-inner {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: flex-start;            /* top-aligned */
+  justify-content: center;
+  gap: clamp(1.25rem, 3vw, 3rem);
+}
+
+/* Left visual */
+.apps-left {
+  flex: 0 0 48%;                      /* slightly less than half to favor copy */
+}
+.apps-visual {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 52vh;                   /* good height without overgrowing */
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+/* Right info */
+.apps-right {
+  flex: 1 1 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;            /* left-aligned stack */
+  gap: 1rem;
+}
+
+/* Title — Swile Nova Bold (ensure @font-face mapped to 'SwileNova' 700) */
+.apps-title {
+  margin: 0;
+  font-family: 'SwileNova', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+  color: #000;
+}
+
+/* Body — Futura PT Light (mapped as 'Futura' 300) */
+.apps-copy {
+  margin: 0;
+  font-family: 'Futura', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.98rem, 1.6vw, 1.125rem);
+  line-height: 1.7;
+  color: #222;
+  max-width: 70ch;
+}
+
+/* Store badge */
+.store-link {
+  display: inline-block;
+}
+.store-badge {
+  height: clamp(36px, 6vw, 48px);
+  width: auto;
+  display: block;
+  filter: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.store-badge:hover {
+  transform: translateY(-1px);
+}
+
+/* ===== Responsiveness ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero { padding-top: 110px; }
+  .apps-inner {
+    gap: clamp(1rem, 2.5vw, 2rem);
+  }
+}
+
+/* Stack on small screens — right above left (left image goes below) */
+@media (max-width: 900px) {
+  .apps-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .apps-right { order: 1; }
+  .apps-left { order: 2; }
+
+  .apps-right {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .apps-visual {
+    max-height: none;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 96px;
+    min-height: 240px;
+    height: 35vh;
+  }
+  .hero-bottom-spacer {
+    height: 6vh;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .apps-title {
+    letter-spacing: 0.03em;
+  }
+  .apps-copy {
+    line-height: 1.65;
+  }
+}
+
+.apps-visual {
+  background: transparent; /* (default, but makes intent explicit) */
+}
+
