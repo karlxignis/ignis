@@ -7,8 +7,8 @@
 .hero {
   height: 50vh;
   min-height: 280px;
-  width: 100vw;          /* force full viewport width */
-  margin: 0;             /* kill default spacing */
+  width: 100vw;          
+  margin: 0;            
   background: #000;
   color: #fff;
 
@@ -22,8 +22,8 @@
 .hero-content {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* center the vertical stack */
-  text-align: center;    /* nice for a hero */
+  align-items: center;   
+  text-align: center;    
   gap: 0.1rem;
   max-width: 900px;
   width: 100%;
@@ -74,3 +74,217 @@
   outline-offset: 3px;
   border-radius: 9999px;
 }
+
+/* ===== App Area ===== */
+.app-area {
+  background: #fff;                 /* white background (explicit) */
+  padding: clamp(1.5rem, 3vw, 3rem) 0;
+}
+
+.app-area-inner {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;   /* ✅ align tops, not centers */
+  justify-content: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+
+/* 60 / 40 split */
+.app-left {
+  flex: 0 0 60%;
+}
+.app-right {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;          /* left-aligned text */
+  gap: 0.75rem;
+}
+
+/* Big left image with soft shadow */
+.app-visual {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12), 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* Right-side logo with soft shadow */
+.ask-logo {
+  width: clamp(120px, 20vw, 220px);
+  height: auto;
+  display: block;
+  border-radius: 12px; /* if logo is not square, harmless */
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10), 0 3px 8px rgba(0,0,0,0.06);
+  margin-bottom: 0.5rem;
+}
+
+/* Label and sublabel */
+.ask-label {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;                 /* Outfit Light (ensure @font-face is defined) */
+  background: #000;
+  color: #fff;
+  border-radius: 9999px;            /* capsule */
+  padding: 0.35rem 0.9rem;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.ask-sublabel {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  color: #4E4E4E;                   /* grey sublabel */
+  font-size: 0.95rem;
+}
+
+/* Capsules row */
+.ask-capsules {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.capsule {
+  background: #D9D9D9;              /* grey background */
+  color: #000;                       /* black text */
+  border-radius: 9999px;
+  padding: 0.4rem 0.9rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .app-area-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .app-left, .app-right {
+    flex: 1 1 auto;
+  }
+  .app-right {
+    gap: 0.6rem;
+  }
+}
+
+.hero-top-spacer {
+  height: 10vh;
+}
+
+.hero-bottom-spacer {
+  height: 10vh;
+}
+
+/* ========== Tablet tweaks (<= 1024px) ========== */
+@media (max-width: 1024px) {
+  .app-area {
+    padding: clamp(1rem, 2vw, 2rem) 0;
+  }
+
+  .app-area-inner {
+    width: min(1000px, 94vw);
+    gap: 1.25rem;
+  }
+
+  .ask-logo {
+    width: clamp(110px, 18vw, 180px);
+  }
+}
+
+/* ========== Stack on small screens (<= 900px) — refine your existing rule ========== */
+@media (max-width: 900px) {
+  .app-area-inner {
+    flex-direction: column;     /* stack left/right */
+    align-items: center;        /* center the column */
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .app-left,
+  .app-right {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .app-right {
+    align-items: center;        /* center contents */
+  }
+
+  .app-visual {
+    max-width: 720px;           /* keep image from getting too huge */
+    margin: 0 auto;
+  }
+
+  .ask-capsules {
+    justify-content: center;    /* keep capsules centered */
+    flex-wrap: wrap;            /* allow wrapping if needed */
+  }
+}
+
+/* ========== Phones / tight tablets (<= 768px) — hide the ask logo ========== */
+@media (max-width: 768px) {
+  /* Hide the right-column logo on small screens */
+  .ask-logo {
+    display: none;
+  }
+
+  /* Slightly larger hero CTA & friendlier spacing on phones */
+  .cta-btn {
+    font-size: 1.125rem;
+    padding: 0.9rem 1.5rem;
+  }
+
+  .brand-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .lead {
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    max-width: 32rem;          /* narrow for readability */
+  }
+
+  .app-area {
+    padding: 1.25rem 0;
+  }
+
+  .capsule {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.95rem;
+  }
+}
+
+/* ========== Very small phones (<= 480px) ========== */
+@media (max-width: 480px) {
+  .hero-top-spacer,
+  .hero-bottom-spacer {
+    height: 6vh;                /* tighten spacers */
+  }
+
+  .app-visual {
+    border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12), 0 3px 10px rgba(0,0,0,0.08);
+  }
+
+  .ask-label {
+    font-size: 0.95rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .ask-sublabel {
+    font-size: 0.9rem;
+  }
+
+  .capsule {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+

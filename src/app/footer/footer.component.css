@@ -1,0 +1,43 @@
+/* Full-width footer with a black top stroke */
+.footer {
+  border-top: 1px solid #000;      /* black top stroke */
+  background: #fff;                /* keep it clean */
+}
+
+/* Centered inner container */
+.footer-inner {
+  width: min(1200px, 92vw);        /* horizontally centered */
+  margin: 0 auto;
+  display: flex;                   /* horizontal flex container */
+  align-items: center;
+  justify-content: space-between;  /* logo left, text right */
+  gap: 1rem;
+  padding: 1rem;  
+  padding-top: 3rem;           /* vertical rhythm */
+  padding-bottom: 3rem;
+}
+
+/* Left logo */
+.footer-logo {
+  display: block;
+  height: 28px;                    /* adjust as you like */
+  width: auto;
+}
+
+/* Right legal text — Outfit Thin, small */
+.legal {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 100;                /* Outfit Thin (ensure @font-face is declared) */
+  font-size: 0.85rem;              /* small text */
+  line-height: 1.4;
+  text-align: right;               /* aligns nicely opposite the logo */
+  color: #000;
+}
+
+/* Optional: keep it readable on tiny screens while staying horizontal */
+@media (max-width: 480px) {
+  .legal {
+    font-size: 0.8rem;
+  }
+}
