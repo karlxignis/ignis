@@ -143,6 +143,7 @@
 }
 
 /* Little affordance when menu is open (optional) */
+/*
 @media (max-width: 768px) {
   .header-container {
     border: none;
@@ -151,6 +152,7 @@
     box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5), 0 3px 10px rgba(0, 0, 0, 0.35);
   }
 }
+  */
 
 .menu-icon {
   width: 24px;
@@ -158,6 +160,51 @@
   display: block;
   filter: brightness(0) invert(1); /* turns any dark icon into pure white */
 }
+
+/* --- Mobile: header has NO background and NO border --- */
+@media (max-width: 768px) {
+  .header-container {
+    /* remove capsule look entirely */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    /* also stop desktop centering */
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: none;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box; /* ensures padding is respected */
+  }
+
+  /* make the row fill and space ends (logo left, hamburger right) */
+  .header-inner {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* hide desktop links, show hamburger */
+  .desktop-nav { display: none !important; }
+
+  .menu-btn {
+    display: inline-flex !important;
+    margin-left: auto;
+    padding: 0;          /* avoid extra offset */
+    width: 24px;
+    height: 24px;
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+}
+
 
 
 
