@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './legal-footer.component.html',
-  styleUrl: './legal-footer.component.css'
+  styleUrls: ['./legal-footer.component.css']
 })
 export class LegalFooterComponent {
 
