@@ -1,26 +1,27 @@
-/* Full-width footer with a black top stroke */
 .footer {
-  border-top: 1px solid #000;      /* black top stroke */
-  background: #fff;                /* keep it clean */
+  border-top: 1px solid #000;
+  background: #fff;
 }
 
 /* Centered inner container */
 .footer-inner {
-  width: min(1200px, 92vw);        /* horizontally centered */
+  width: min(1200px, 92vw);
   margin: 0 auto;
-  display: flex;                   /* horizontal flex container */
+
+  display: flex;
   align-items: center;
-  justify-content: space-between;  /* logo left, text right */
-  gap: 1rem;
-  padding: 1rem;  
-  padding-top: 3rem;           /* vertical rhythm */
-  padding-bottom: 3rem;
+  justify-content: space-between;
+  gap: 1.25rem;
+
+  /* comfy spacing + safe-area on iOS */
+  padding: 2rem clamp(1rem, 3vw, 2rem);
+  padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
 }
 
 /* Left logo */
 .footer-logo {
   display: block;
-  height: 28px;                    /* adjust as you like */
+  height: clamp(24px, 3vw, 32px);
   width: auto;
 }
 
@@ -28,16 +29,67 @@
 .legal {
   margin: 0;
   font-family: 'Outfit', sans-serif;
-  font-weight: 100;                /* Outfit Thin (ensure @font-face is declared) */
-  font-size: 0.85rem;              /* small text */
-  line-height: 1.4;
-  text-align: right;               /* aligns nicely opposite the logo */
+  font-weight: 100;
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+  line-height: 1.5;
+  text-align: right;
   color: #000;
+
+  /* readability helpers on narrow screens/long strings */
+  max-width: 70ch;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
-/* Optional: keep it readable on tiny screens while staying horizontal */
-@media (max-width: 480px) {
+/* ====== Breakpoints ====== */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .footer-inner {
+    gap: 1rem;
+    padding: 1.75rem clamp(1rem, 4vw, 2rem);
+  }
+}
+
+/* Tablets and down: use grid for nicer balance */
+@media (max-width: 900px) {
+  .footer-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    row-gap: 1rem;
+  }
+  .legal {
+    justify-self: end;       /* keep text on the right column */
+    text-align: right;
+    max-width: 65ch;
+  }
+}
+
+/* Phones: stack and center everything */
+@media (max-width: 600px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    row-gap: 0.75rem;
+    padding: 1.5rem 1rem calc(2rem + env(safe-area-inset-bottom));
+  }
+
+  .legal {
+    justify-self: center;
+    text-align: center;
+    max-width: 90ch;         /* allow a bit wider when centered */
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .footer-logo {
+    height: 22px;
+  }
   .legal {
     font-size: 0.8rem;
+    line-height: 1.45;
   }
 }
