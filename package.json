@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:pages": "ng build --configuration production --output-path docs --base-href \"/\" --deploy-url \"/\" && cp docs/index.html docs/404.html && echo karlxignis.com > docs/CNAME"
   },
   "private": true,
   "dependencies": {
